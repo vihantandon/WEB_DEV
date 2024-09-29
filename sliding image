@@ -1,0 +1,85 @@
+<div class="slider">
+        <div class="slides">
+          <!-- First Slide -->
+          <div class="slide">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/937/727/original/business-startup-launching-product-with-rocket-concept-template-and-backgrounds-illustration-business-project-startup-process-idea-through-planning-and-strategy-time-management-vector.jpg" alt="Image 1">
+          </div>
+          <!-- Second Slide -->
+          <div class="slide">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.qLf7Wknym3DiyKnJ0-9RegHaEA&pid=Api&P=0&h=220" alt="Image 2">
+          </div>
+          <!-- Third Slide -->
+          <div class="slide">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.adWM0bAA_fOk5xUyFu-CGgHaFj&pid=Api&P=0&h=220" alt="Image 3">
+          </div>
+        </div>
+      </div>
+
+.slider {
+    width: 50%;
+    height: 85vh;
+    margin: 25px auto;
+    overflow: hidden; /* Hide images outside the container */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    left: 24.5vw;
+    top: 27px;
+  }
+  
+  /* Slides container */
+  .slides {
+    display: flex;
+    width: 100%;
+    animation: slideAnimation 12s infinite; /* Controls the timing of the slide */
+  }
+  
+  /* Each individual slide */
+  .slide {
+    width: 100%;
+    flex: 1 0 100%; /* Each slide takes full width of the container */
+    object-fit: cover;
+  }
+  
+  .slide img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Keyframes for animation */
+  @keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+  }
+
+  img{
+    height: 90vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+const slides = document.querySelector('.slides');
+let interval = setInterval(slideShow, 4000); // Slide every 4 seconds
+
+function slideShow() {
+  slides.style.transition = "transform 0.5s ease-in-out";
+  slides.style.transform = "translateX(-100%)";
+  // Reset after the last slide
+  setTimeout(() => {
+    slides.appendChild(slides.firstElementChild);
+    slides.style.transition = "none";
+    slides.style.transform = "translateX(0)";
+  }, 500);
+}
+
+// Pause on hover
+document.querySelector('.slider').addEventListener('mouseenter', () => {
+  clearInterval(interval);
+});
+
+// Resume when not hovering
+document.querySelector('.slider').addEventListener('mouseleave', () => {
+  interval = setInterval(slideShow, 4000);
+});
