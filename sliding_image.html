@@ -1,21 +1,10 @@
-<div class="slider">
-        <div class="slides">
-          <!-- First Slide -->
-          <div class="slide">
-            <img src="https://static.vecteezy.com/system/resources/previews/001/937/727/original/business-startup-launching-product-with-rocket-concept-template-and-backgrounds-illustration-business-project-startup-process-idea-through-planning-and-strategy-time-management-vector.jpg" alt="Image 1">
-          </div>
-          <!-- Second Slide -->
-          <div class="slide">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.qLf7Wknym3DiyKnJ0-9RegHaEA&pid=Api&P=0&h=220" alt="Image 2">
-          </div>
-          <!-- Third Slide -->
-          <div class="slide">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.adWM0bAA_fOk5xUyFu-CGgHaFj&pid=Api&P=0&h=220" alt="Image 3">
-          </div>
-        </div>
-      </div>
-
-.slider {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .slider {
     width: 50%;
     height: 85vh;
     margin: 25px auto;
@@ -59,8 +48,28 @@
     width: 100vw;
     object-fit: cover;
   }
-
-const slides = document.querySelector('.slides');
+  </style>
+</head>
+<body>
+  <div class="slider">
+        <div class="slides">
+          <!-- First Slide -->
+          <div class="slide">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/937/727/original/business-startup-launching-product-with-rocket-concept-template-and-backgrounds-illustration-business-project-startup-process-idea-through-planning-and-strategy-time-management-vector.jpg" alt="Image 1">
+          </div>
+          <!-- Second Slide -->
+          <div class="slide">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.qLf7Wknym3DiyKnJ0-9RegHaEA&pid=Api&P=0&h=220" alt="Image 2">
+          </div>
+          <!-- Third Slide -->
+          <div class="slide">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.adWM0bAA_fOk5xUyFu-CGgHaFj&pid=Api&P=0&h=220" alt="Image 3">
+          </div>
+        </div>
+      </div>
+</body>
+<script>
+  const slides = document.querySelector('.slides');
 let interval = setInterval(slideShow, 4000); // Slide every 4 seconds
 
 function slideShow() {
@@ -83,3 +92,10 @@ document.querySelector('.slider').addEventListener('mouseenter', () => {
 document.querySelector('.slider').addEventListener('mouseleave', () => {
   interval = setInterval(slideShow, 4000);
 });
+</script>
+</html>
+
+
+
+
+
